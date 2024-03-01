@@ -50,7 +50,7 @@ public class Machine
 
       return maxPayout; 
     }
-    return -0.25; // did not win (the machine took the money)
+    return 0; // did not win (the machine took the money)
   }
   
   public boolean inService() { return potAvailable > maxPayout; }
