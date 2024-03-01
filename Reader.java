@@ -25,23 +25,20 @@ public class Reader
     for (int i = 0; i < counter; i++){
       name = sc.next();
 
-      if (name == "Yoda") {
+      if (name.equals("yoda")) {
         p = sc.nextDouble();
         in = sc.nextDouble();
         pay = sc.nextDouble();
         tmp = new Yoda(name, p, in, pay);
       }
-      else if (name == "Pirate"){
+      else if (name.equals("pirate")){
         in = sc.nextDouble();
         pay = sc.nextDouble();
         tmp = new Pirate(name, in, pay);
       }
 
-      m[counter] = tmp;
-
+      m[i] = tmp;
     }
-
-
     return m;
   }
 }
