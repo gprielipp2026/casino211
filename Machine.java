@@ -6,7 +6,7 @@ public class Machine
   protected double maxPayout;
   private double potCasino;
   private double potAvailable;
-  private double initialAvailable
+  private double initialAvailable;
   private boolean putInCasinoPot;
   protected static final Random rand = new Random(System.currentTimeMillis());
 
