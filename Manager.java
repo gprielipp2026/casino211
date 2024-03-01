@@ -4,7 +4,7 @@ public class Manager
   private int pos;
   private double wallet;
 
-  public Manager(wallet, Machine[] machines)
+  public Manager(double wallet, Machine[] machines)
   {
     this.wallet = wallet;
     this.machines = machines;

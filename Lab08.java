@@ -1,4 +1,6 @@
-public Lab08
+import java.util.*;
+
+public class Lab08
 {
   public static void main(String[] args)
   {
