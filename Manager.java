@@ -14,6 +14,9 @@ public class Manager
   public void draw()
   {
     // draw machines and money
+    System.out.println();
+    System.out.println("<<<<<<< You have $" + wallet  + " >>>>>>>");
+    Draw.show(machines, pos);
   }
 
   public void exec(String comm)
@@ -30,6 +33,13 @@ public class Manager
     else if(comm.equals("play"))
     {
       wallet += machines[pos].play() - 0.25;
+    }
+    else if(comm.equals("*report"))
+    {
+      for(Machine m : machines)
+      {
+        m.report();
+      }
     }
   }
 }

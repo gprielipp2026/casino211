@@ -8,11 +8,11 @@ public Lab08
       System.exit(1);
     }
 
-    double wallet = String.parseDouble(args[0]);
+    double wallet = Double.parseDouble(args[0]);
     String setupFN = args[1];
 
     Machine[] machines = Reader.machines(setupFN);
-    Manager manager = new Manager(machines);
+    Manager manager = new Manager(wallet, machines);
 
     Scanner in = new Scanner(System.in);
     String cmd;
