@@ -1,7 +1,7 @@
 public class Pirate extends Machine
 {
     public Pirate(String n, double i, double o){
-        super(n, o, i);
+        super("Pirate", o, i);
     }
 
     protected boolean playerWins(){

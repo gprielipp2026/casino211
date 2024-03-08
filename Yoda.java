@@ -2,7 +2,7 @@ public class Yoda extends Machine
 {   private double probability;
     
     public Yoda(String n, double p, double i, double o){
-        super(n, o, i);
+        super("Yoda", o, i);
         probability = p;
     }
 

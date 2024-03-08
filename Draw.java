@@ -7,37 +7,58 @@ public class Draw
 
   public static void show(Machine[] m, int pos) 
   {
+    int maxWidth = 0;
+    for(int i = 0; i < m.length; i++)
+    {
+      if(maxWidth < m[i].getName().length())
+        maxWidth = m[i].getName().length();
+    }
+
     // print boxes
     for(int row = 1; row <= 5; row++)
     {
       for(int i = 0; i < m.length; i++) // prints the machine of each row
       {
         if (pos == i)
-          printRow(row, '#', m[i]);
+          printRow(maxWidth, row, '#', m[i]);
         else
-          printRow(row, '-', m[i]);
+          printRow(maxWidth, row, '-', m[i]);
       }
-      System.out.println("\t");
+      System.out.println();
     }
     // m[i].printRow(i);
 
   }
 
-  public static void printRow(int row, char c, Machine m)
+  private static void printRepeat(char c, int nTimes)
+  {
+    for(int i = 0; i < nTimes; i++)
+      System.out.print(c);
+  }
+
+  private static void printRow(int maxMachineWidth, int row, char c, Machine m)
   {
     if (row == 1 || row == 5)
     {
       if (c == '#')
-        System.out.println("##########");
+        printRepeat('#', maxMachineWidth+4);
       else 
-        System.out.println("----------");
+        printRepeat('-', maxMachineWidth+4);
     }
     else if (row == 2 || row == 4)
     {
       if (c == '#')
-        System.out.println("# \t #");
+      {
+        System.out.print("#");
+        printRepeat(' ', maxMachineWidth+2); 
+        System.out.print("#");
+      }
       else 
-        System.out.println("- \t -");
+      {
+        System.out.print("-");
+        printRepeat(' ', maxMachineWidth+2); 
+        System.out.print("-");
+      }
     }
     else // row 3
     {
@@ -45,11 +66,10 @@ public class Draw
         System.out.print("#");
       else  
         System.out.print("-");
-
-      if (m.getName().equals("Pirate"))
-        System.out.print(" Pirate ");
-      else  
-        System.out.print("  Yoda  ");
+      
+      printRepeat(' ', (maxMachineWidth - m.getName().length())/2 + 1);
+      System.out.print(m.getName());
+      printRepeat(' ', (maxMachineWidth - m.getName().length())/2 + 1);
 
       if (c == '#')
         System.out.print("#");
